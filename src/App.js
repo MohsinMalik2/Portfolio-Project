@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from './GlobalStyle'
-import { darkTheme, lightTheme } from './components/Themes'
+import { lightTheme } from './components/Themes'
 import {BrowserRouter, Route, Switch } from 'react-router-dom'
 import Main from './components/Main'
 import SkillPage from './components/SkillPage'
@@ -21,7 +21,6 @@ function App() {
               <Route exact path="/work" component={WorkPage} />
             </Switch>
         </BrowserRouter>
-          
       </ThemeProvider>
     </>
 }
