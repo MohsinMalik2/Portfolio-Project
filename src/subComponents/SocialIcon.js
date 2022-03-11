@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Facebook, Github, Twitter, YouTube } from '../components/AllSVG'
+import { darkTheme } from '../components/Themes'
 const Icon = styled.div`
 display:flex;
 flex-direction:column;
@@ -19,34 +20,34 @@ z-index:3;
 const Line = styled.span`
 width:2px;
 height:8rem;
-background-color: ${props => props.theme.text}
+background-color: ${props => props.color === 'dark' ? darkTheme.text : darkTheme.body };
 `
-function SocialIcon() {
+function SocialIcon(props) {
 
   
   return (
     <Icon>
         <div>
             <NavLink to={{pathname: "https://buggbear.com"}} target="_blank" style={{color:"inherit"}}>
-                <Github width={30} height={30} fill="currentColor"/>
+                <Github width={30} height={30} fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}/>
             </NavLink>
         </div>
         <div>
             <NavLink to={{pathname: "https://buggbear.com"}} target="_blank" style={{color:"inherit"}}>
-                <Twitter width={30} height={30} fill="currentColor"/>
+                <Twitter width={30} height={30} fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}/>
             </NavLink>
         </div>
         <div>
             <NavLink to={{pathname: "https://buggbear.com"}} target="_blank" style={{color:"inherit"}}>
-                <Facebook width={30} height={30} fill="currentColor"/>
+                <Facebook width={30} height={30} fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}/>
             </NavLink>
         </div>
         <div>
             <NavLink to={{pathname: "https://buggbear.com"}} target="_blank" style={{color:"inherit"}}>
-                <YouTube width={30} height={30} fill="currentColor"/>
+                <YouTube width={30} height={30} fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}/>
             </NavLink>
         </div>
-        <Line/>
+        <Line color={props.theme}/>
     </Icon>
   )
 }
