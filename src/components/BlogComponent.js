@@ -16,9 +16,8 @@ const Box = styled.div`
     box-shadow:0 0 1rem 0 rgba(0,0,0,0.2);
     img{
         width:100%;
+        height:10rem;
     }
-   
-    
     
 `
 const Tags = styled.div`
@@ -31,7 +30,6 @@ const Tags = styled.div`
         background:rgba(255,0,0,0.3);
         margin-right:5px;
     }
-
 
 `
 const Title = styled.h3`
@@ -84,8 +82,8 @@ function BlogComponent(props) {
         <Title>{props.blog.name}</Title>
         <Tags>
             {
-                props.blog.tags.map(tags =>{
-                    return <span className='tagStyle'>{tags}</span>
+                props.blog.tags.map((tags,id) =>{
+                    return <span className='tagStyle' key={id}>{tags}</span>
                 })
             }
             <DateTag>

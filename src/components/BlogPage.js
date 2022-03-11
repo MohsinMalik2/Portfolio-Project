@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import img from '../assets/Images/bgBlog.jpg'
 import HomeButton from '../subComponents/HomeButton'
@@ -6,7 +6,7 @@ import LogoComponent from '../subComponents/LogoComponent'
 import SocialIcon from '../subComponents/SocialIcon'
 import BlogComponent from './BlogComponent'
 import {Blogs} from "../data/BlogData"
-
+import AnchorComponent from '../subComponents/AnchorComponent'
 
 const MainContainer = styled.div`
   background-image: url(${img});
@@ -39,12 +39,23 @@ const Grid = styled.div`
   grid-gap: calc(1rem + 2vw);
 `
 const BlogPage = () => {
+
+  const [numbers, setNumbers] = useState(0);
+
+  useEffect(() => {
+  let num = (window.innerHeight - 70) / 30;
+  setNumbers(parseInt(num));
+  }, [])
+  
+
+
   return (
     <MainContainer>
       <Container>
         <HomeButton/>
         <LogoComponent/>
         <SocialIcon/>
+        <AnchorComponent number={numbers}/>
         <Center>
           <Grid>
             {
