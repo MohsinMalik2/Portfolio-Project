@@ -7,6 +7,7 @@ import SocialIcon from '../subComponents/SocialIcon'
 import BlogComponent from './BlogComponent'
 import {Blogs} from "../data/BlogData"
 import AnchorComponent from '../subComponents/AnchorComponent'
+import MainTitle from '../subComponents/MainTitle'
 
 const MainContainer = styled.div`
   background-image: url(${img});
@@ -67,6 +68,7 @@ const BlogPage = () => {
         </Center>
 
       </Container>
+      <MainTitle text="BLOG" right="10%" top="10%" left="10%"/>
     </MainContainer>
   )
 }

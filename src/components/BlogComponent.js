@@ -18,6 +18,7 @@ const Box = styled.div`
         width:100%;
         height:10rem;
     }
+    z-index:3;
     
 `
 const Tags = styled.div`
